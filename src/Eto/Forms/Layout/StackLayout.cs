@@ -390,6 +390,15 @@ namespace Eto.Forms
 			items = new StackLayoutItemCollection { Parent = this };
 		}
 
+		public StackLayout(params StackLayoutItem[] items)
+		{
+			this.items = new StackLayoutItemCollection { Parent = this };
+			foreach (var item in items)
+			{
+				this.items.Add(item);
+			}
+		}
+
 		VerticalAlignment GetVerticalAlign(StackLayoutItem item)
 		{
 			var align = item.VerticalAlignment ?? VerticalContentAlignment;
